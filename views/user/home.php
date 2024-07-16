@@ -7,7 +7,7 @@
                             <img src="https://gshock.casio.com/content/experience-fragments/casio/en/feature/timepiece/watch/g-shock/mt_g/mtg_b2000/features02/us/_jcr_content/root/container_963753939/teaser.casiocoreimg.jpeg/1659473003966/mtg-b2000-tile-img-2-1600x900.jpeg" alt="">
                             <div class="bground-slider"></div>
                             <div class="content-slider">
-                                <h1>G-Shock VIỆT NAM</h1>
+                                <h1  id="content-sd" >G-Shock VIỆT NAM</h1>
                                 <span>Chuyên phân phối đồng hồ Casio Mỹ/Nhật chính hãng giá cạnh tranh nhất</span>
                                 <button><a href="">MUA NGAY</a></button>
                             </div>
@@ -309,16 +309,25 @@
 
 
     //SLIDER MAIN
+    let conten_sd = document.getElementById('content-sd');
         let leftSlider = document.getElementById('left1');
         let rightSlider = document.getElementById('right1');
             rightSlider.addEventListener('click', () => {
             let listSlider = document.querySelectorAll('.img-slider');
             document.getElementById('slider-main').appendChild(listSlider[0]);
+            
         });
         leftSlider.addEventListener('click', () => {
             let listSlider = document.querySelectorAll('.img-slider');
+         
+           
             document.getElementById('slider-main').prepend(listSlider[listSlider.length-1]);
+           
         });
+
+  
+
+   
 
         //SLIDER DANH MỤC SẢN PHẨM
         let btnLeftModel = document.getElementById('left-model');
