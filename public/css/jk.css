@@ -1,0 +1,218 @@
+footer {
+    clear: both;
+    width: 100%;
+    background-image: url(http://donghotuandt.vnn.mn/userfiles/img/604453/footerbackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: max-content;
+    color: var(--color-white);
+}
+.footer {
+    width: 1200px;
+    margin: 30px auto;
+    margin-bottom: 0;
+    display: grid;
+    padding-bottom: 30px;
+}
+.ft-product {
+    padding-top: 30px;
+}
+.footer h5 {
+    font-size: var(--fontsize-16);
+    font-weight: 500;
+    color: var(--color-red);
+    text-align: left;
+    margin-left: 0;
+}
+.footer ul {
+    text-align: left;
+    padding-left: 0;
+}
+.footer ul li {
+    font-size: 15px;
+    line-height: 25px;
+   
+}
+.first-footer {
+    width: 100%;
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+.first-footer .img-footer {
+    width: 30%;
+    overflow: hidden;
+    display: grid;
+}
+.img-footer .img {
+    width: 80%;
+    margin-bottom: 20px;
+}
+.first-footer .img img {
+    width: 100%;
+}
+.img-footer .address {
+    width: 100%;
+    text-align: left;
+}
+.img-footer .address ul {
+    padding-left: 0;
+}
+.img-footer .address ul i {
+    color: var(--color-red);
+}
+.first-footer .policy-footer {
+    width: 40%;
+    padding: 0px 20px;
+    display: flex;
+}
+.first-footer .policy-footer .first-policy {
+    width: 50%;
+}
+.footer  ul {
+    list-style: none;
+}
+.first-footer .policy-footer .second-policy {
+    width: 50%;
+}
+.first-footer .address-footer {
+    width: 30%;
+    padding: 0 15px;
+}
+.first-address ul {
+    width: 100%;
+    display: flex;
+}
+.first-address ul li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+    padding: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.first-address ul i {
+    font-size: 30px;
+}
+.first-address ul li:hover {
+    border: 2px solid var(--color-red);
+    color: var(--color-red);
+}
+.second-address {
+    margin-top: 36px;
+}
+.enter-mail {
+    text-align: left;
+    margin-top: 10px;
+}
+.enter-mail input {
+    width: 70%;
+    line-height: var(--fontsize-27);
+    outline: none;
+}
+.enter-mail button {
+    line-height: 27px;
+    padding: 4px 15px;
+    font-size: var(--fontsize-14);
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--color-white);
+    background-color: #333333;
+    color: var(--color-white);
+
+}
+.enter-mail button:hover {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+.second-footer {
+    width: 100%;
+    padding: 15px 0px;
+    text-align: center;
+    font-size: var(--fontsize-13);
+    background-color: rgb(0, 0, 0);
+    background-color: var(--color-black);
+}
+.urlFooter {
+    color: var(--color-red);
+}
+
+
+
+
+
+
+
+
+
+<div class="first-footer">
+<div class="img-footer">
+    <div class="img">
+        <a href=""><img src="http://donghotuandt.vnn.mn/files/assets/logomwatch02.png" alt=""></a>
+    </div>
+    <div class="address">
+        <h5>ĐỊA CHỈ CỬA HÀNG</h5>
+        <ul>
+            <li><i class='bx bxs-location-plus'></i> <span>65 Phạm Như Xương, Liên Chiểu, Đà Nẵng</span></li>
+            <li><i class='bx bxs-phone-call'></i> <span>036.293.1719</span></li>
+            <li><i class='bx bxs-envelope'></i> <span>tuandt@gshock.vn</span></li>
+        </ul>
+    </div>
+</div>
+<div class="policy-footer">
+    <div class="first-policy">
+        <h5>CHÍNH SÁCH CHUNG</h5>
+        <ul>
+            <li>Điều khoản thanh toán</li>
+            <li>Chính sách bảo hành</li>
+            <li>Chính sách bảo mật</li>
+            <li>Chính sách vận chuyển</li>
+            <li>Chính sách đổi trả</li>
+        </ul>
+    </div>
+    <div class="second-policy">
+        <h5>LIÊN HỆ HỖ TRỢ</h5>
+        <ul>
+            <li>Hotline 1: <span>036.293.1719</span></li>
+            <li>Hotline 2: <span>036.293.1819</span></li>
+            <li>Hotline 3: <span>036.293.1919</span></li>
+            <li>Phản ánh: tuandt@gshock.vn</li>
+        </ul>
+    </div>
+</div>
+<div class="address-footer">
+    <div class="first-address">
+        <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+        <ul>
+            <li><i class='bx bxl-facebook-circle' ></i></li>
+            <li><i class='bx bxl-instagram-alt'></i></li>
+            <li><i class='bx bxl-twitter' ></i></li>
+            <li><i class='bx bxl-youtube' ></i></li>
+        </ul>
+    </div>
+    <div class="second-address">
+        <h5>ĐĂNG KÍ NHẬN KHUYẾN MÃI</h5>
+        <div class="enter-mail">
+            <form action="">
+                <input type="email" placeholder="Nhập email của bạn...">
+                <button type="submit">Nhận tin</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="second-footer">
+<div class="content-second-ft">
+    <b class="ban-quyen-ft">
+        <span>©</span>
+        <span> Bản quyền thuộc về</span>
+    </b>
+    <b><a class="urlFooter" href="">G-Shock VN</a></b>
+    <b>. Hotline: 036.293.1719 - 036.293.1819 - 036.293.1919</b>
+    <b>. Email: tuandt@gshock.vn</b>
+</div>
+</div>

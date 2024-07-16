@@ -1,74 +1,147 @@
 <footer>
 <div class="footer">
-                    <div class="first-footer">
-                        <div class="img-footer">
-                            <div class="img">
-                                <a href=""><img src="http://donghotuandt.vnn.mn/files/assets/logomwatch02.png" alt=""></a>
-                            </div>
-                            <div class="address">
-                                <h5>ĐỊA CHỈ CỬA HÀNG</h5>
-                                <ul>
-                                    <li><i class='bx bxs-location-plus'></i> <span>65 Phạm Như Xương, Liên Chiểu, Đà Nẵng</span></li>
-                                    <li><i class='bx bxs-phone-call'></i> <span>036.293.1719</span></li>
-                                    <li><i class='bx bxs-envelope'></i> <span>tuandt@gshock.vn</span></li>
-                                </ul>
-                            </div>
+              
+                <div class="footer">
+                    <div class="footer-item">
+
+                    <div class="footer-image">
+                        <div class="footer-logo">
+                            <img src="http://donghotuandt.vnn.mn/userfiles/img/604453/logomwatch02.png" alt="">
                         </div>
-                        <div class="policy-footer">
-                            <div class="first-policy">
-                                <h5>CHÍNH SÁCH CHUNG</h5>
-                                <ul>
-                                    <li>Điều khoản thanh toán</li>
-                                    <li>Chính sách bảo hành</li>
-                                    <li>Chính sách bảo mật</li>
-                                    <li>Chính sách vận chuyển</li>
-                                    <li>Chính sách đổi trả</li>
-                                </ul>
-                            </div>
-                            <div class="second-policy">
-                                <h5>LIÊN HỆ HỖ TRỢ</h5>
-                                <ul>
-                                    <li>Hotline 1: <span>036.293.1719</span></li>
-                                    <li>Hotline 2: <span>036.293.1819</span></li>
-                                    <li>Hotline 3: <span>036.293.1919</span></li>
-                                    <li>Phản ánh: tuandt@gshock.vn</li>
-                                </ul>
-                            </div>
+
+                        <div class="footer-image-item">
+                        <i class='bx bx-street-view'></i>
+                        <p>319 C16 Lý Thường Kiệt, Phường 15, Quận 11, Tp.HCM</p>
                         </div>
-                        <div class="address-footer">
-                            <div class="first-address">
-                                <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
-                                <ul>
-                                    <li><i class='bx bxl-facebook-circle' ></i></li>
-                                    <li><i class='bx bxl-instagram-alt'></i></li>
-                                    <li><i class='bx bxl-twitter' ></i></li>
-                                    <li><i class='bx bxl-youtube' ></i></li>
-                                </ul>
-                            </div>
-                            <div class="second-address">
-                                <h5>ĐĂNG KÍ NHẬN KHUYẾN MÃI</h5>
-                                <div class="enter-mail">
-                                    <form action="">
-                                        <input type="email" placeholder="Nhập email của bạn...">
-                                        <button type="submit">Nhận tin</button>
-                                    </form>
-                                </div>
-                            </div>
+
+                        <div class="footer-image-item">
+                        <i class='bx bx-phone-call'></i>
+                        <p>076 922 0162</p>
+                        </div>
+
+                        <div class="footer-image-item">
+                        <i class='bx bx-envelope' ></i>
+                        <p>demonhunterg@gmail.com 
+                      </p>
+                        </div>
+
+                        <div class="footer-image-item">
+                        <i class='bx bxs-hand'></i>
+                        <p>
+                        mon@mona.media
+                        </div>
+
+
+                    </div>
+
+                    <div class="footer-content">
+                        <h2>MENU</h2>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Trang chủ</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>GiớI thiệu</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Tin tức</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Liên hệ</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Kiểm tra đơn hàng</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Đăng ký Affilicate</p>
                         </div>
                     </div>
+
+
+                    <div class="footer-content">
+                        <h2>SẢN PHẨM</h2>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Baby-G</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Edifice</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>G-Shock</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>G-Steel</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Gravity Master</p>
+                        </div>
+
+                        <div class="footer-content-item">
+                        <i class='bx bxs-right-arrow'></i>
+                        <p>Mudmaster</p>
+                        </div>
+                    </div>
+
+
+                    <div class="footer-form">
+                        <h2>ĐĂNG KÝ</h2>
+                        <span>Đăng ký để nhận được được thông tin mới nhất từ chúng tôi.</span>
+
+               
+                   
+
+                    <div class="footer-form-ip">
+
+                    <div class="input-fieldd">
+                    <i class='bx bx-send'></i>
+                <input type="text" placeholder="Email">
+               </div>
+                    </div>
+                    <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
+
+                    <div class="footer-form-icon">
+                    <i class='bx bxl-facebook-circle'></i>
+                    <i class='bx bxl-instagram-alt'></i>
+                    <i class='bx bxs-envelope' ></i>
+                    <i class='bx bxl-twitter' ></i>
+                    </div>
+
+                    </div>
+
+                    </div>
+
+
+
+
                     
                 </div>
-                <div class="second-footer">
-                        <div class="content-second-ft">
-                            <b class="ban-quyen-ft">
-                                <span>©</span>
-                                <span> Bản quyền thuộc về</span>
-                            </b>
-                            <b><a class="urlFooter" href="">G-Shock VN</a></b>
-                            <b>. Hotline: 036.293.1719 - 036.293.1819 - 036.293.1919</b>
-                            <b>. Email: tuandt@gshock.vn</b>
-                        </div>
-                </div>
+
+
+
+
+
+
                 <div class="support">
                     <div class="contain-content">
                         <div class="content-support">
@@ -119,6 +192,9 @@
                         </div>
                 </div>
 </footer>
+    <div class="content-">
+   <p> © Bản quyền thuộc về . Thiết kế website Nhóm Tuấn-Việt-Vị</p>
+    </div>
 </div>
 </body>
 <script src="../../public/Js/main.js?v= <?php echo time();?>"></script>
