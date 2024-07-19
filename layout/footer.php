@@ -1,7 +1,7 @@
 <footer>
 <div class="footer">
               
-                <div class="footer">
+               
                     <div class="footer-item">
 
                     <div class="footer-image">
@@ -135,7 +135,7 @@
 
 
                     
-                </div>
+                
 
 
 
@@ -191,11 +191,12 @@
                         <i class='bx bx-caret-left' ></i>
                         </div>
                 </div>
+                </div>
 </footer>
     <div class="content-">
    <p> © Bản quyền thuộc về . Thiết kế website Nhóm Tuấn-Việt-Vị</p>
     </div>
-</div>
+
 </body>
 <script src="../../public/Js/main.js?v= <?php echo time();?>"></script>
 </html>
