@@ -49,9 +49,9 @@ body {
     font-size: var(--fontsize-13);
     box-sizing: border-box;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     /* text-align: center; */
-    overflow: auto;
+    overflow: hidden;
 }
 
 a {
