@@ -122,7 +122,34 @@ article .account-admin .content-admin .small-li{
     top: 80%;
 }
 .none-active {
-    display: none;
+    display: none !important;
+}
+.form-error-status {
+    padding: 50px 20px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    background: #343a40;
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 35%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: red;
+}
+.form-error-status button {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    color: #007bff;
+    padding: 10px 55px;
+    margin-top: 20px;
+}
+.form-error-status button:hover {
+    background-color: white;
 }
 .form-edit {  
     padding: 50px 20px;

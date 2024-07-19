@@ -20,7 +20,7 @@
     function update_orders($status,$id)
     {
         global $db;
-        $db->query("UPDATE orders SET orderstatus = '$status' WHERE id = $id");
+            $db->query("UPDATE orders SET orderstatus = '$status' WHERE id = $id");
     }
 
 ?>

@@ -196,14 +196,31 @@
                                 break;
                             case 'order':
                                 $result = show_orders();
-                                include "order/the-order-manager.php";
+                                $statusOld = "";
+                                $none_active = "none-active";
+                                if(isset($_GET['notstatus']) && $_GET['notstatus'] == 'false') {
+                                    $none_active = "";
+                                    $statusO = $_GET['status'];
+                                    include "order/the-order-manager.php";
+                                } else {
+                                    include "order/the-order-manager.php";
+                                }
+                                
+                                
                                 break;
                             case 'update-orders':
                                 if(isset($_POST['btn-update-status'])) {
                                     $status = $_POST['status'];
                                     $id = $_POST['id'];
-                                    update_orders($status,$id);
-                                    header('location: index.php?route=order');
+                                    $statusOld = $_POST['status-old'];
+                                    
+                                    if($statusOld == 'Đã hủy đơn' || $statusOld == "Đã giao") {
+                                        header('location: index.php?route=order&notstatus=false&status=' . $statusOld);
+                                    } else {
+                                        update_orders($status,$id);
+                                        header('location: index.php?route=order');
+                                    }
+                                    
                                 }
                                 break;
                             case 'comment':
@@ -246,4 +263,5 @@
                 <?php include '../../layout/footer-admin.php' ?>
  
 <script src="../../public/Js/admin.js?v=<?php echo time()?>"></script>
+
 
