@@ -585,9 +585,10 @@ small {
     height: max-content;
     overflow: hidden;
     box-sizing: border-box;
-    background-image: url(http://donghotuandt.vnn.mn/userfiles/img/604453/black_background_metal.jpg);
-    background-size: 100%;
-    background-repeat: repeat;
+    /* background-image: url(http://donghotuandt.vnn.mn/userfiles/img/604453/black_background_metal.jpg); */
+    background-color: white;
+    /* background-size: 100%; */
+    /* background-repeat: repeat; */
 }
 
 .container article {
@@ -3259,9 +3260,10 @@ footer {
     background: #111111;
     width: 100%;
     max-height: 400px;
-    border: 20px solid rgb(0, 0, 0);
-    padding: 50px;
+    /* border: 20px solid rgb(0, 0, 0); */
+    padding: 40px 70px;
 }
+
 
 .footer-image {
     width: 30%;

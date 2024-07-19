@@ -1,7 +1,7 @@
 <footer>
 <div class="footer">
               
-                <div class="footer">
+               
                     <div class="footer-item">
 
                     <div class="footer-image">
@@ -135,7 +135,7 @@
 
 
                     
-                </div>
+                
 
 
 
