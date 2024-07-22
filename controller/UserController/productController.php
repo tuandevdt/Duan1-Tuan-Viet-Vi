@@ -8,6 +8,13 @@
         $result = $db->select("SELECT * FROM products WHERE categoryid = $categoryID");
         return $result;
     }
+    //Search product by name
+    function search_product($name_product)
+    {
+        global $db;
+        $result = $db->select("SELECT * FROM products WHERE productname LIKE '%$name_product%'");
+        return $result;
+    }
     //Show detail product from id
     function detail($idproduct)
     {

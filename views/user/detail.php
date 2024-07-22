@@ -2,7 +2,7 @@
         <main class="main-introduce">
             <article>
                 <div class="img-title-introduce">
-                    <img src="https://www.casio.com/content/casio/locales/us/en/products/watches/gshock/products/mr-g/_jcr_content/root/responsivegrid/container_1689197747/teaser_copy.casiocoreimg.jpeg/1710874565974/mrgb5000ba-pc-nologo-1920x816.jpeg" alt="">
+                    <img src="https://www.casio.com/content/casio/locales/intl/en/products/watches/edifice/_jcr_content/root/responsivegrid/carousel_copy/item_1706862202645.casiocoreimg.jpeg/1716264357222/nighttime-drive-series-hero-pc-m.jpeg" alt="">
                 </div>
 
                 <div class="content-detail-contai">

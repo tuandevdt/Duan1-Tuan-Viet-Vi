@@ -196,15 +196,7 @@
                                 break;
                             case 'order':
                                 $result = show_orders();
-                                $statusOld = "";
-                                $none_active = "none-active";
-                                if(isset($_GET['notstatus']) && $_GET['notstatus'] == 'false') {
-                                    $none_active = "";
-                                    $statusO = $_GET['status'];
                                     include "order/the-order-manager.php";
-                                } else {
-                                    include "order/the-order-manager.php";
-                                }
                                 
                                 
                                 break;
@@ -212,14 +204,9 @@
                                 if(isset($_POST['btn-update-status'])) {
                                     $status = $_POST['status'];
                                     $id = $_POST['id'];
-                                    $statusOld = $_POST['status-old'];
                                     
-                                    if($statusOld == 'Đã hủy đơn' || $statusOld == "Đã giao") {
-                                        header('location: index.php?route=order&notstatus=false&status=' . $statusOld);
-                                    } else {
                                         update_orders($status,$id);
                                         header('location: index.php?route=order');
-                                    }
                                     
                                 }
                                 break;

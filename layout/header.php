@@ -87,7 +87,7 @@
                         </div>
                         <div class="search-header">
                             <div class="search">
-                                <form action="index.php?route=list-products" method="POST">
+                                <form action="index.php?route=search-product" method="POST">
                                     <input type="text" name="product-insearch" placeholder="Tìm kiếm">
                                     <button type="submit" name="search-product"><i class='bx bx-search'></i></button>
                                 </form>

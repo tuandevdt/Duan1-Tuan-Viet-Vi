@@ -137,12 +137,37 @@
                 }    
                 include 'my-account.php';
                 break;      
+            case 'edit-my-account':
+                    $none_address = "none-address";
+                    $block_form_address = "";
+                    $row = show_account($userid);
+                include 'my-account.php';
+                break;      
+            case 'update-my-account':
+                    $street = $_POST['address-detail'];
+                    $ward = $_POST['ward'];
+                    $district = $_POST['district'];
+                    $city = $_POST['city'];
+                    $phone = $_POST['phone'];
+                    $fullname = $_POST['firstname'];
+                    update_address($street,$ward,$district,$city,$phone,$fullname,$userid);
+                    $row = show_account($userid);
+                include 'my-account.php';
+                break;      
             case 'introduce':
                 include 'introduce.php';
                 break;      
             case 'list-products':
                 $resultsCategory = list_categories();
                 $resultsProductGSTEEL = load_product(1);
+                $resultsProductGAIR = load_product(2);
+                $resultsProductGLAND = load_product(3);
+                include 'product.php';
+                break;      
+            case 'search-product':
+                $name_product = $_POST['product-insearch'];
+                $resultsCategory = list_categories();
+                $resultsProductGSTEEL = search_product($name_product);
                 $resultsProductGAIR = load_product(2);
                 $resultsProductGLAND = load_product(3);
                 include 'product.php';

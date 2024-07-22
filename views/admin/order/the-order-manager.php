@@ -35,15 +35,16 @@
                 <?php } ?>
             </tbody>
             <div class="form-edit form-orders none-active">
+                
                     <form action="index.php?route=update-orders" method="POST"> 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Chọn trạng thái người dùng</label>
+                            <label for="exampleInputPassword1">Chọn trạng thái đơn hàng</label>
                             <select class="custom-select my-1 mr-sm-2" name="status">
-                                <option value="Chờ xử lý">Chờ xử lý</option>
-                                <option value="Đã xác nhận">Đã xác nhận</option>
-                                <option value="Đang vận chuyển">Đang vận chuyển</option>
-                                <option value="Đã giao">Đã giao</option>
-                                <option value="Đã hủy đơn">Đã hủy đơn</option>
+                                <option class="option-order" value="Chờ xử lý">Chờ xử lý</option>
+                                <option class="option-order" value="Đã xác nhận">Đã xác nhận</option>
+                                <option class="option-order" value="Đang vận chuyển">Đang vận chuyển</option>
+                                <option class="option-order" value="Đã giao">Đã giao</option>
+                                <option class="option-order" value="Đã hủy đơn">Đã hủy đơn</option>
                             </select>
                         </div>
                         
@@ -56,14 +57,7 @@
                     </div>
                     
                 </div>
-            <div class="form-error-status <?php echo $none_active ?>">
-                <form action="index.php?route=order" method="POST">
-                    <div class="content-error">
-                        Không thể cập nhật do đơn hàng đang ở trạng thái <?php echo $statusO ?>
-                    </div>
-                    <div class="submit-close-error"><button class="close-btn">Ok</button></div>
-                </form>
-            </div>
+
         </table>
 </div>
 <script>
@@ -74,16 +68,46 @@
             document.getElementById('id-update').value = button.value;
             let itemstatus = document.querySelectorAll('.status')[index];
             document.getElementById('status-old').value = itemstatus.value;
-            
+
+            switch(itemstatus.value) {
+                case 'Chờ xử lý': 
+                    document.querySelector('.option-order[value="Đã xác nhận"]').disabled = false;
+                    document.querySelector('.option-order[value="Đang vận chuyển"]').disabled = false;
+                    document.querySelector('.option-order[value="Đã giao"]').disabled = false;
+                    document.querySelector('.option-order[value="Đã hủy đơn"]').disabled = false;
+                    break;
+                case 'Đã xác nhận': 
+                    document.querySelector('.option-order[value="Chờ xử lý"]').disabled = true;
+                    document.querySelector('.option-order[value="Đã xác nhận"]').disabled = false;
+                    document.querySelector('.option-order[value="Đang vận chuyển"]').disabled = false;
+                    document.querySelector('.option-order[value="Đã giao"]').disabled = false;
+                    document.querySelector('.option-order[value="Đã hủy đơn"]').disabled = true;
+                    break;
+                case 'Đang vận chuyển': 
+                    document.querySelector('.option-order[value="Chờ xử lý"]').disabled = true;
+                    document.querySelector('.option-order[value="Đã xác nhận"]').disabled = true;
+                    document.querySelector('.option-order[value="Đang vận chuyển"]').disabled = false;
+                    document.querySelector('.option-order[value="Đã giao"]').disabled = false;
+                    document.querySelector('.option-order[value="Đã hủy đơn"]').disabled = true;
+                    break;
+                case 'Đã giao': 
+                    document.querySelector('.option-order[value="Chờ xử lý"]').disabled = true;
+                    document.querySelector('.option-order[value="Đã xác nhận"]').disabled = true;
+                    document.querySelector('.option-order[value="Đang vận chuyển"]').disabled = true;
+                    document.querySelector('.option-order[value="Đã giao"]').disabled = false;
+                    document.querySelector('.option-order[value="Đã hủy đơn"]').disabled = true;
+                    break;
+                case 'Đã hủy đơn': 
+                    document.querySelector('.option-order[value="Chờ xử lý"]').disabled = true;
+                    document.querySelector('.option-order[value="Đã xác nhận"]').disabled = true;
+                    document.querySelector('.option-order[value="Đang vận chuyển"]').disabled = true;
+                    document.querySelector('.option-order[value="Đã giao"]').disabled = true;
+                    break;
+            }
         })
     });
     document.querySelector('.btn-close').addEventListener('click', () => {
         document.querySelector('.form-edit').classList.add('none-active');
     });
 
-    let btnCloseError = document.querySelector('.close-btn');
-    btnCloseError.addEventListener('click', () => {
-        let formError = document.querySelector('.form-error-status');
-        formError.classList.add('none-active');
-    });
 </script>
