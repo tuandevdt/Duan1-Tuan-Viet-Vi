@@ -60,7 +60,41 @@ form .sign-in-form{
     opacity: 1;
     transition: 0.5s ease-in-out;
     transition-delay: 1s;
+    position: relative;
 }
+.p-pass{
+    width: 50%;
+    height: 100%;
+    background-color:#191616;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 15% 5%;
+    display: none;
+   
+  
+
+    
+}
+.lissi{
+   display: block;
+}
+.p-pass .title{
+    margin-bottom: 10%;
+}
+.tk{
+    display: flex;
+    justify-content: space-between;
+}
+.tk input{
+    width: 170px;
+}
+
+
+
+
 form .sign-up-form{
     opacity: 1;
     transition: 0.5s ease-in-out;
@@ -123,6 +157,11 @@ form .sign-up-form{
     font-size: 16px;
     color: white;
     font-weight: bold;
+}
+.social-text:hover{
+    color: red;
+    transition: 0.5s;
+    cursor: pointer;
 }
 .social-media{
     display: flex;
