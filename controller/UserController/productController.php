@@ -60,15 +60,35 @@
     function update_cart($productIds,$quantities,$prices,$userid)
     {
         global $db;
+        $count = 0;
         for($i = 0; $i < count($productIds); $i++) {
             $productId = $productIds[$i];
             $quantity = $quantities[$i];
+            if($quantity < 0) {
+                return "negative";
+            }
             $totalPrice = $prices[$i] * $quantity;
+
+            //kiem tra so luong cua san pham so voi so luong trong gio hang
+            $result = $db->select("SELECT * FROM products WHERE id = '$productId'");
+            $quantity_of_product = $result[0]['quantity'];
+            // echo $quantity_of_product;
+            // exit;
+            if($quantity > $quantity_of_product) {
+                $db->query("UPDATE cart SET totalItem = $quantity_of_product, totalPrice = $totalPrice
+                WHERE productid = '$productId' AND userid = $userid"); 
+                $count+= 1;
+            } else {
+                // Cập nhật số lượng sản phẩm trong giỏ hàng
+                $db->query("UPDATE cart SET totalItem = $quantity, totalPrice = $totalPrice
+                WHERE productid = '$productId' AND userid = $userid"); 
+            }
             
-            // Cập nhật số lượng sản phẩm trong giỏ hàng
-            $db->query("UPDATE cart SET totalItem = $quantity, totalPrice = $totalPrice
-                        WHERE productid = '$productId' AND userid = $userid");           
+                      
         }  
+        if($count > 0) {
+            return "exceed quantity";
+        }
     }
 
     //Delete cart
@@ -76,5 +96,22 @@
     {
         global $db;
         $db->query("DELETE FROM cart WHERE id = $id");
+    }
+    //Add comments
+    function add_comment($text, $product_id, $userid, $date)
+    {
+        global $db;
+        $db->query("INSERT INTO comment (text,commentAt,userid,productid)
+                    VALUES ('$text', '$date',$userid,'$product_id')");
+    }
+    //Delete comment
+    function delete_comment($id) {
+        global $db;
+        $db->query("DELETE FROM comment WHERE id = $id");
+    }
+    //Update comment
+    function update_comment($id,$text) {
+        global $db;
+        $db->query("UPDATE comment SET text = '$text' WHERE id = $id");
     }
 ?>

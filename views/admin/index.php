@@ -46,6 +46,10 @@
                                         $not404 = "Lỗi không xác định!";
                                     }
                                 } 
+
+                                if(isset($_GET['delete'])) {
+                                    echo "<script> alert('Danh mục đã được ràng buộc bởi các sản phẩm!')</script>";
+                                }
                                 break;
                             case 'create-category':
                                 include "category/create-category.php";
@@ -78,8 +82,13 @@
                                 if(isset($_POST['submit'])) {
                                     if($_POST['submit'] == 'yes') {
                                         $id = $_POST['id-xoa'];
-                                        delete_category($id);
-                                        header('location: index.php?route=category');
+                                        $check = check_category_before_delete($id);
+                                        if($check == false) {
+                                            header('location: index.php?route=category&delete=false');
+                                        } else {
+                                            delete_category($id);
+                                            header('location: index.php?route=category');
+                                        }
                                     }
                                 }
                                 break;
@@ -109,6 +118,11 @@
                                 } else {
                                     echo "<script>document.querySelector('.active1').style.background = 'white';</script>";
                                 }
+                                
+                                if(isset($_GET['delete'])) {
+                                    echo "<script> alert('Sản phẩm đang được xử lý trong giỏ hàng hoặc đơn hàng!')</script>";
+                                }
+                                
                                 break;
                             case 'create-product':
                                 $duplicateID = '';
@@ -161,7 +175,14 @@
                                     $row = product($id);
                                     $resultCategory = show_categories();
                                 }
+                                $quantityError = '';
+                                if(isset($_GET['update'])) {
+                                    if($_GET['update'] == 'quantityError') {
+                                        $quantityError = 'The quantity of products must be positive!';
+                                    }
+                                }
                                 include "product/update-product.php";
+                                
                                 break;
                             case 'handle-update-product':
                                 if(isset($_FILES['image'])){
@@ -171,16 +192,21 @@
                                     $price = $_POST['price'];
                                     $description = $_POST['description'];
                                     $quantity = $_POST['quantity'];
-                                    $categoryid = $_POST['categoryid'];
-                                    // //IMAGE
-                                    $path = __DIR__ . '/../../image/products/';
-                                    if (!is_dir($path)) {
-                                        mkdir($path);
-                                    }       
-                                    // Hàm di chuyển file
-                                    move_uploaded_file($picture['tmp_name'], $path . $picture['name']);
-                                    update_product($id,$productname,$picture,$price,$description,$quantity,$categoryid);
-                                    header('location: index.php?route=product');
+                                    if($quantity < 0) {
+                                        header('location: index.php?route=update-product&update=quantityError&id='. $id);
+                                    } else {
+                                        $categoryid = $_POST['categoryid'];
+                                        // //IMAGE
+                                        $path = __DIR__ . '/../../image/products/';
+                                        if (!is_dir($path)) {
+                                            mkdir($path);
+                                        }       
+                                        // Hàm di chuyển file
+                                        move_uploaded_file($picture['tmp_name'], $path . $picture['name']);
+                                        update_product($id,$productname,$picture,$price,$description,$quantity,$categoryid);
+                                        header('location: index.php?route=product');
+                                    }
+                                    
                                 } else {
                                     header('location: index.php?route=update-product&update=error');
                                 }
@@ -189,8 +215,15 @@
                                 if(isset($_POST['submit'])) {
                                     if($_POST['submit'] == 'yes') {
                                         $id = $_POST['id-xoa'];
-                                        delete_product($id);
-                                        header('location: index.php?route=product');
+                                        //check xem sản phẩm có nằm trong giỏ hàng hay đã được đặt hay không
+                                        $check = check_product_before_delete($id);
+                                        if($check == false) {
+                                            //đã tồn tại
+                                            header('location: index.php?route=product&delete=false');
+                                        } else {
+                                            delete_product($id);
+                                            header('location: index.php?route=product');
+                                        } 
                                     }
                                 }
                                 break;

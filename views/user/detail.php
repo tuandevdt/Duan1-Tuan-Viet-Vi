@@ -2,7 +2,7 @@
         <main class="main-introduce">
             <article>
                 <div class="img-title-introduce">
-                    <img src="https://www.casio.com/content/casio/locales/intl/en/products/watches/edifice/_jcr_content/root/responsivegrid/carousel_copy/item_1706862202645.casiocoreimg.jpeg/1716264357222/nighttime-drive-series-hero-pc-m.jpeg" alt="">
+                    <img src="../../image/bg-detail.avif" alt="">
                 </div>
 
                 <div class="content-detail-contai">
@@ -53,7 +53,16 @@
                                                 <input class="numberProduct" type="hidden" value="1" name="number-detail">
                                                 <!-- <span type="text" class="plus-numbercart">+</span>
                                         </div> -->
-                                        <button class="addcart">Thêm vào giỏ hàng</button>
+                                        <?php 
+                                            $addCart = "addcart";
+                                            $soldOut = "none-open";
+                                            if($rows['quantity'] == 0) {
+                                                $addCart = "none-open";
+                                                $soldOut = "";
+                                            }
+                                        ?>
+                                        <button class="<?php echo $addCart ?>">Thêm vào giỏ hàng</button>
+                                        <span class="btn-sold-out <?php echo $soldOut ?>">Hết hàng</span>
                                         <span class="favourite"><i class='bx bxs-phone-call'></i> Hoặc liên hệ qua số điện thoại: 036.293.1719 </span>
                                         
                                 </div>
@@ -207,7 +216,7 @@
                         
                         
                         <div class="write-your-comment">
-                            <form action="../../model/user/handle-add-comment.php" method="POST">
+                            <form action="index.php?route=new-comment" method="POST">
                                 <textarea rows="10" cols="100" name="comment" placeholder="Viết bình luận của bạn ở đây..."></textarea>
                                 <input type="hidden" name="productid" value="<?php echo $rows['id'] ?>">
                                 <button class="btn-comment" name="submit" type="submit" value="send-cmt">Gửi</button>
@@ -222,7 +231,7 @@
                                 ?>
                             <!-- Phần Popup -->
                             <div id="editCommentPopup" style="display: none;">
-                                <form action="../../model/user/handle-update-comment.php" method="POST"> <!-- Thay "update_comment.php" bằng tên trang PHP xử lý -->
+                                <form action="index.php?route=edit-comment" method="POST"> <!-- Thay "update_comment.php" bằng tên trang PHP xử lý -->
                                     <input type="text" name="editedCommentText" id="editedCommentText">
                                     <div class="btn-edit">
                                         <div class="close-edit aa">Trở lại</div>
@@ -251,7 +260,7 @@
                                 <div class="content-cmt">
                                     <span><?php echo $row_comment['text'] ?> </span>
                                     <div class="edit-cmt" data-comment-id="<?php echo $row_comment['id'] ?>"><i><?php echo $edit_cmt ?></i></div>
-                                    <div><i><a href="index.php?route=detail&cmtid=<?php echo $row_comment['id'] ?>"><?php echo $xoa ?></a></i></div>
+                                    <div><i><a href="index.php?route=delete-comment&cmtid=<?php echo $row_comment['id'] ?>&productid=<?php echo $row_comment['productid']?>"><?php echo $xoa ?></a></i></div>
                                 </div>
                                 <div class="date-cmt">
                                     <i><?php echo $row_comment['commentAt'] ?> </i>

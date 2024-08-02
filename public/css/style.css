@@ -1318,7 +1318,7 @@ article {
 }
 
 .slider-product-contai .slider-products {
-    display: flex;
+    display: inline-flex;
     height: 100%;
 }
 
@@ -1660,6 +1660,18 @@ article {
     margin-bottom: 20px;
     border: 1px solid var(--color-gray);
     background-color: var(--color-white);
+    cursor: pointer;
+}
+.btn-detail .btn-sold-out {
+    width: 100%;
+    line-height: 3rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    font-size: 1rem;
+    background: rgb(184, 184, 184);
+    color: black;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 
@@ -2282,7 +2294,7 @@ article {
 .number .soluong {
     border: 1px solid var(--color-gray);
     border-radius: 25px;
-    width: 62px;
+    width: 80px;
     height: 30px;
     margin: auto;
     overflow: hidden;
@@ -2318,7 +2330,7 @@ article {
 }
 
 .number input {
-    width: 20px;
+    width: 40px;
     height: 100%;
     vertical-align: top;
     border: none;
@@ -3576,7 +3588,7 @@ footer .footer {
 }
 
 .none-open {
-    display: none;
+    display: none !important;
 }
 
 .list-open-sp ul {

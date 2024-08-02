@@ -22,4 +22,6 @@ window.onscroll = function() {
     } else {
         rightContent.classList.remove('right-cont-detail-scroll-bottom');
     }
+    
+
 }

@@ -46,12 +46,6 @@ loginShowLogout.addEventListener('mouseleave', () => {
 let changeSlider = () => {
 let listIcons = document.querySelectorAll('.item-icon');
 document.getElementById('list-slider-sp').appendChild(listIcons[0]);
-// document.querySelector('.contain-content').classList.add('hover-support');
-// setInterval(
-//     () => {
-//         document.querySelector('.contain-content').classList.remove('hover-support');
-//     }, 1000
-// );
 };
 
 let timeChangeSlider = setInterval(changeSlider, 1000);

@@ -185,6 +185,33 @@
                 }
                 include 'detail.php';
                 break;      
+            case 'new-comment':
+                if(isset($_POST['comment'])) {
+                    $text = $_POST['comment'];
+                    $idProduct = $_POST['productid'];
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $date = date('Y-m-d H:i:s');
+                    add_comment($text, $idProduct, $userid, $date);
+                }
+                header('location: index.php?route=detail&idproduct=' . $idProduct);                
+                break;
+            case 'edit-comment':
+                if(isset($_POST['editedCommentText'])) {
+                    $id = $_POST['commentID'];
+                    $text = $_POST['editedCommentText'];
+                    $productid = $_POST['productid'];
+                    update_comment($id,$text);
+                }
+                header('location: index.php?route=detail&idproduct=' . $productid);     
+                break;
+            case 'delete-comment':
+                    if(isset($_GET['cmtid'])) {
+                        $id = $_GET['cmtid'];
+                        $productid = $_GET['productid'];
+                        delete_comment($id);
+                    }
+                    header('location: index.php?route=detail&idproduct=' . $productid); 
+                break;     
             case 'cart':
                 $results = show_cart($userid);
                 include 'cart.php';
@@ -197,7 +224,16 @@
                                 $productIds = is_array($_POST['productid']) ? $_POST['productid'] : [];
                                 $quantities = is_array($_POST['totalItem']) ? $_POST['totalItem'] : [];
                                 $prices = is_array($_POST['price-check']) ? $_POST['price-check'] : [];
-                                update_cart($productIds,$quantities,$prices,$userid);
+                                $a = update_cart($productIds,$quantities,$prices,$userid);
+                                if($a == "exceed quantity") {
+                                    echo "<script>
+                                            alert('Có sản phẩm vượt quá số lượng nên đã được đưa về số lượng lớn nhất!');
+                                        </script>";
+                                } else if ($a == "negative") {
+                                    echo "<script>
+                                            alert('Số lượng sản phẩm không thể là số âm!');
+                                        </script>";
+                                }
                             }
                             break;
                         case 'pay':
@@ -260,8 +296,43 @@
                 break;      
             case 'my-orders':
                 $result = my_orders($userid);
+                if(isset($_GET['cancel'])) {
+                    if($_GET['cancel'] == 'error') {
+                        echo "<script>
+                                    alert('Không thể hủy đơn do đơn đã được xử lý bởi admin!!!')
+                                </script>";
+                    } else if($_GET['cancel'] == 'success') {
+                        echo "<script>
+                                    alert('Đã hủy đơn thành công!')
+                                </script>";
+                    } else if($_GET['cancel'] == 'delete-oke') {
+                        echo "<script>
+                                    alert('Đã xóa đơn thành công!')
+                                </script>";
+                    }
+                    
+                }
                 include 'order-detail.php';
-                break;      
+                break;
+            case 'cancel-order':
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $status = $_GET['status'];
+                    if($status === "Chờ xử lý") {
+                        cancel_order($id);
+                        header('location: index.php?route=my-orders&cancel=success');
+                    } else {
+                        header('location: index.php?route=my-orders&cancel=error');
+                    }
+                }
+                break;
+            case 'delete-order':
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    delete_order($id);
+                    header('location: index.php?route=my-orders&cancel=delete-oke');
+                }
+                break;
             case 'show-order-item':
                 if($_GET['orderID']) {
                     $orderID = $_GET['orderID'];

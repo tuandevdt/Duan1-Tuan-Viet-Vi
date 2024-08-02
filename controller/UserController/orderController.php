@@ -24,6 +24,8 @@
 
             $db->query("INSERT INTO orderitem (orderID, productID, quantity, price, totalprice) 
                     VALUES ($orderID, '$productId', $quantity, '$price', '$sum_price')"); 
+            $db->query("UPDATE products SET quantity = quantity - $quantity, salescount = salescount + $quantity
+                        WHERE id = '$productId'");
         } 
         $db->query("DELETE FROM cart WHERE userid = $userid");
     }
@@ -48,5 +50,27 @@
                                 INNER JOIN products ON orderitem.productID = products.id
                                 WHERE orderitem.orderID = $orderID AND orders.userid = $userid");
         return $result;
+    }
+
+    //CANCEL ORDER
+    function cancel_order($id) {
+        global $db;
+        $db->query("UPDATE orders SET orderstatus = 'Đã hủy đơn' WHERE id = $id");
+
+        //lấy ra từng sản phẩm của đơn order theo id
+        $results = $db->select("SELECT * FROM orderitem WHERE orderID = $id");
+        foreach ($results as $result) {
+            $quantity = $result['quantity'];
+            $productId = $result['productID'];
+            $db->query("UPDATE products SET quantity = quantity + $quantity, salescount = salescount - $quantity
+                        WHERE id = '$productId'");
+        }
+    }
+
+    //DELETE ORDER
+    function delete_order($id) {
+        global $db;
+        $db->query("DELETE FROM orderitem WHERE orderID = $id");
+        $db->query("DELETE FROM orders WHERE id = $id");
     }
 ?>

@@ -1,5 +1,8 @@
 <?php
     // include '../../model/DatabaseModel.php';
+
+use function PHPSTORM_META\elementType;
+
     $db = new Database();
     //Show list product
     function show_products()
@@ -68,6 +71,19 @@
     {
         global $db;
         $db->query("DELETE FROM products WHERE id = '$id'");
+    }
+
+    //CHECK PRODUCT BEFORE DELETE
+    function check_product_before_delete($id)
+    {
+        global $db;
+        $resultOrder = $db->select("SELECT * FROM orderitem WHERE productID = '$id'");
+        $resultCart = $db->select("SELECT * FROM cart WHERE productid = '$id'");
+        if($resultCart == null && $resultOrder == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 ?>

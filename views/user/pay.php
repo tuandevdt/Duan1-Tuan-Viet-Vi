@@ -90,7 +90,7 @@
                                     <input type="hidden" name="productid[]" value="<?php echo $row['productid']?>">
                                     <td style="text-align:left"><?php echo $row['totalItem']?></td>
                                     <input type="hidden" name="quantity[]" value="<?php echo $row['totalItem']?>">
-                                    <td class="price-checkout" style="text-align: right;"><?php echo number_format($row['totalItem'] * $row['price'])?> vnđ</td>
+                                    <td class="price-checkout" style="text-align: right;"><?php echo number_format($row['totalItem'] * $row['price'])?>VNĐ</td>
                                     <input type="hidden" name="price-a[]" value="<?php echo $row['price']?>">
                                 </tr>
                                 <?php $sum_price += $row['totalItem'] * $row['price'] ?>
@@ -98,7 +98,7 @@
                                 <tr>
                                     <td>Tạm tính</td>
                                     <td></td>
-                                    <td class="price-checkout" style="text-align: right;"><?php echo number_format($sum_price) ?> vnđ</td>
+                                    <td class="price-checkout" style="text-align: right;"><?php echo number_format($sum_price) ?>VNĐ</td>
                                     <input type="hidden" name="sum_price" value="<?php echo $sum_price ?>">
                                 </tr>
                                 <tr>
@@ -109,7 +109,7 @@
                                 <tr>
                                     <td class="sum-price">Tổng</td>
                                     <td></td>
-                                    <td class="price-checkout"><?php echo number_format($sum_price) ?> vnđ</td>
+                                    <td class="price-checkout"><?php echo number_format($sum_price) ?>VNĐ</td>
                                 </tr>
                             </table>
                             <!-- <div class="pay-cart">

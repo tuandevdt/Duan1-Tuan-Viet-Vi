@@ -24,6 +24,7 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Quantity</label>
                 <input type="number" name="quantity" class="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp" value="<?php echo $row['quantity']?>">
+                <small id="emailHelp" class="error"><?php echo $quantityError ?></small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Category Name</label>          

@@ -1,17 +1,4 @@
-<?php
-    session_start();
-    if(isset($_GET['delete_order'])) {
-        if($_GET['delete_order'] === 'success'){
-            echo "<script>
-            alert('Đã hủy đơn thành công!');
-            </script>";
-        } else {
-            echo "<script>
-                alert('Không thể hủy đơn! Đơn hàng đã được xác nhận hoặc đang vận chuyển!');
-                </script>";
-        }      
-    }
-?>
+
 
         <main class="margin-cart-order main-introduce">
             <article>
@@ -54,8 +41,8 @@
                                                     $block_form_address = "";
                                                     }
                                                 ?>
-                                                <button class="<?php echo $none_address?>"><a href="../../model/user/handle-cancel-order.php?idcancel=<?php echo $row['id']?>&status=<?php echo $row['orderstatus']?>">Hủy đơn hàng</a></button>
-                                                <button class="<?php echo $block_form_address?>"><a href="../../model/user/handle-cancel-order.php?iddelete=<?php echo $row['id']?>&status=<?php echo $row['orderstatus']?>">Xóa đơn hàng</a></button>
+                                                <button class="<?php echo $none_address?>"><a href="index.php?route=cancel-order&id=<?php echo $row['id']?>&status=<?php echo $row['orderstatus']?>">Hủy đơn hàng</a></button>
+                                                <button class="<?php echo $block_form_address?>"><a href="index.php?route=delete-order&id=<?php echo $row['id']?>">Xóa đơn hàng</a></button>
                                             </div>
                                         </div>
                                     </div>

@@ -25,7 +25,7 @@
                                         <input class="numbera" type="hidden" value="<?php echo $row['productid'] ?>" name="productid[]" data-product-id="<?php echo $row['productid'] ?>">
                                         <td><img src="../../image/products/<?php echo $row['image']?>" alt=""></td>
                                         <td class="name-shoe">G-Shock <?php echo $row['productname']?></td>
-                                        <td class="price-checkout price-index"><?php echo number_format($row['price'])?> vnđ</td>
+                                        <td class="price-checkout price-index"><?php echo number_format($row['price'])?>VNĐ</td>
                                         <input type="hidden" name="price-check[]" value="<?php echo $row['price']?>">
                                         <td class="number">
                                             <div class="soluong">
@@ -34,7 +34,7 @@
                                                 <span type="text" class="plus-numbercart">+</span>
                                             </div>
                                         </td>
-                                        <td class="price-checkout price-num"><input type="hidden" style="border: none;background:transparent;"><?php echo number_format($row['price'] * $row['totalItem'])?> vnđ</input></td>
+                                        <td class="price-checkout price-num"><input type="hidden" style="border: none;background:transparent;"><?php echo number_format($row['price'] * $row['totalItem'])?>VNĐ</input></td>
                                     </tr>
                                     <?php $sum_price += $row['totalItem'] * $row['price'] ?>
                                     <?php } ?>
@@ -54,13 +54,13 @@
                                 <tr>
                                     <td>Tạm tính</td>
                                     
-                                    <td class="price-checkout-sum"><?php echo number_format($sum_price)?> vnđ</td>
+                                    <td class="price-checkout-sum"><?php echo number_format($sum_price)?>VNĐ</td>
                                     <input type="hidden" value="<?php echo number_format($sum_price)?>" name="sum_price">
                                     
                                 </tr>
                                 <tr>
                                     <td>Phí giao hàng</td>
-                                    <td class="price-checkout"><?php echo number_format(30000) ?> vnđ</td>
+                                    <td class="price-checkout"><?php echo number_format(30000) ?>VNĐ</td>
                                 </tr>
                                 <tr>
                                     <td>Giao hàng</td>
@@ -74,19 +74,19 @@
                                     <td class="sum-price">Tổng</td>
                                     
                                     <td class="price-checkout-sum">
-                                        <?php echo number_format($sum_price)?> vnđ
+                                        <?php echo number_format($sum_price)?>VNĐ
                                     </td>
                                 
                                 </tr>
                                 
                             </table>
-                            <div class="discount">
+                            <!-- <div class="discount">
                                 <form class="form-discount" action="">
                                     <input type="text"placeholder="Nhập mã giảm giá">
                                     <button>Áp dụng</button>
                                 </form>
-                            </div>
-                            <div class="btn-checkout">
+                            </div> -->
+                            <div class="btn-checkout" style="margin-top: 50px;">
                                 <button type="submit" name="submit" value="pay">Tiến hành đặt hàng</button>
                             </div>
                         </div>

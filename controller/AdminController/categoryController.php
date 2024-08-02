@@ -44,4 +44,16 @@
         $db->query("DELETE FROM categories WHERE id = $id");
     }
 
+    //CHECK CATEGORY BEFORE DELETE
+    function check_category_before_delete($id)
+    {
+        global $db;
+        $result = $db->select("SELECT * FROM products WHERE categoryid = $id");
+        if($result == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 ?>
