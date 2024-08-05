@@ -7,10 +7,10 @@
 
                 <div class="content-detail-contai">
                     <div class="first-detail-content">
-                        <div class="img-first-content">
+                        <div class="img-first-content"  id="left">
                             <img src="../../image/products/<?php echo $rows['image'] ?>" alt="">
                         </div>
-                        <div class="infor-first-content">
+                        <div class="infor-first-content" id="right">
                             <form action="add-cart.php" method="POST">
                                 <div class="title-detail">
                                     <div class="name-detail">G-SHOCK</div>
@@ -285,3 +285,23 @@
         </main>
 <script src="../../public/Js/edit-cmt.js?v= <?php echo time();?>"></script>
 <script src="../../public/Js/detail.js?v= <?php echo time();?>"></script>
+<script>
+        window.addEventListener('scroll', () => {
+        const left = document.getElementById("left")
+        const right = document.getElementById("right")
+
+        if (window.scrollY > 100) { // Điều chỉnh giá trị này tùy theo nhu cầu
+            
+            left.classList.add('scrolled1');
+            right.classList.add('scrolled2');
+            left.style.display = "block"
+            right.style.display = "block"
+        } else {
+           
+            left.classList.remove('scrolled1');
+            right.classList.remove('scrolled2');
+            left.style.display = "none"
+            right.style.display = "none"
+        }
+    })
+</script>

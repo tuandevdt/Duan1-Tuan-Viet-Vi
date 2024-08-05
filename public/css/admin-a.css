@@ -285,13 +285,14 @@ article .content-container{
     min-height: 100vh;
     width: 100%;
     color:white;
-    background-image: url(../../image/MTG_S1000BD_1AER_2__82920.jpg);
+    /* background-image: url(../../image/MTG_S1000BD_1AER_2__82920.jpg); */
+    background-color: rgba(0, 0, 0, 0.763);
     background-position: center;
 }
 .category h1 {
     text-align: center;
-    color: red;
-    text-shadow: 3px 1px 3px black;
+    color: white;
+    /* text-shadow: 3px 1px 3px black; */
 }
 .category small {
     color: red;

@@ -52,15 +52,15 @@
                 <div class="title-models">
                     <div class="content-title">
                         <div class="title-md">
-                            <img src="../../image/logo/24hoursphoneservice300x300.png" alt="">
+                            <img src="https://mauweb.monamedia.net/gwatch/wp-content/uploads/2018/11/24-hours-phone-service.png" alt="">
                             <strong>Phục vụ 24/7</strong>
                         </div>
                         <div class="title-md">
-                            <img src="../../image/logo/logisticsdeliverytruckinmovement300x300.png" alt="">                 
+                            <img src="https://mauweb.monamedia.net/gwatch/wp-content/uploads/2018/11/24-hours-phone-service.png" alt="">                 
                             <strong>Giao hàng tận nơi</strong>
                         </div>
                         <div class="title-md">
-                            <img src="../../image/logo/gift300x300.png" alt="">
+                            <img src="https://mauweb.monamedia.net/gwatch/wp-content/uploads/2018/11/gift.png" alt="">
                             <strong>Miễn phí vận chuyển</strong>
                         </div>
                     </div>
