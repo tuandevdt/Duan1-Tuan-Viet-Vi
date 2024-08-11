@@ -56,7 +56,7 @@
                             <strong>Phục vụ 24/7</strong>
                         </div>
                         <div class="title-md">
-                            <img src="https://mauweb.monamedia.net/gwatch/wp-content/uploads/2018/11/24-hours-phone-service.png" alt="">                 
+                            <img src="../../image/logisticsdeliverytruckinmovement300x300.png" alt="">                 
                             <strong>Giao hàng tận nơi</strong>
                         </div>
                         <div class="title-md">

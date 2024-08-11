@@ -151,6 +151,7 @@ article .account-admin .content-admin .small-li{
 .form-error-status button:hover {
     background-color: white;
 }
+
 .form-edit {  
     padding: 50px 20px;
     border-radius: 10px;
@@ -161,6 +162,26 @@ article .account-admin .content-admin .small-li{
     top: 50%;
     left: 35%;
     transform: translateY(-50%);
+    color: white;
+}
+table .img-detail img {
+    height: 100px;
+}
+.infor-order {
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 2rem;
+}
+.title-detail {
+    width: 100%;
+    position: relative;
+    height: max-content;
+}
+.title-detail .prev-order {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
 }
 .form-edit .form-group {
     display: flex;
@@ -326,6 +347,17 @@ article .content-container{
     padding-top: 0;
     cursor: pointer;
     color: #007bff;
+}
+.more .btn-view-more {
+    border: none;
+    background: transparent;
+    /* outline: none; */
+    padding-top: 0;
+    cursor: pointer;
+    color: #007bff;
+}
+.more .btn-view-more:hover {
+    text-decoration: underline;
 }
 .more .btn-delete-category:hover {
     text-decoration: underline;

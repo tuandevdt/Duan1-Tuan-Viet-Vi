@@ -230,8 +230,6 @@
                             case 'order':
                                 $result = show_orders();
                                     include "order/the-order-manager.php";
-                                
-                                
                                 break;
                             case 'update-orders':
                                 if(isset($_POST['btn-update-status'])) {
@@ -242,6 +240,15 @@
                                         header('location: index.php?route=order');
                                     
                                 }
+                                break;
+                            case 'order-detail':
+                                if(isset($_GET['id'])) {
+                                    $orderId = $_GET['id'];
+                                    $result = show_order_detail($orderId);
+                                    $customer = show_user_address($orderId)[0];
+                                    include "order/order-detail.php";
+                                }
+                                
                                 break;
                             case 'comment':
                                 $results = show_comments();

@@ -9,30 +9,31 @@
                     <th scope="col">Total Amount</th>
                     <th scope="col">Address ID</th>
                     <th scope="col">User ID</th>
-                    <th scope="col">Note</th>
                     <th scope="col">Order Stauts</th>
                     <th scope="col">More</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($result as $row) {  ?>
+                <?php if(isset($result)) {foreach ($result as $row) {  ?>
                 <tr>
                     <th scope="row"><?php echo $row['id']?></th>
                     <td><?php echo $row['orderdate']?></td>
                     <td><?php echo number_format($row['totalamount'])?> vnđ</td>
                     <td><?php echo $row['shippingaddressID']?></td>
                     <td><?php echo $row['userid']?></td>
-                    <td><?php echo $row['note']?></td>
                     <td style="color: #db0000"><?php echo $row['orderstatus']?></td>
                     <input class="status" type="hidden" value="<?php echo $row['orderstatus']?>">
                     <td class="more">
                         <button class="btn-delete-category" value="<?php echo $row['id'] ?>">
                             Edit 
                         </button>
+                        <a href="index.php?route=order-detail&id=<?php echo $row['id'] ?>">
+                            View More 
+                        </a>
                     </td>
                 </tr>
                 
-                <?php } ?>
+                <?php } } ?>
             </tbody>
             <div class="form-edit form-orders none-active">
                 
@@ -56,8 +57,7 @@
                         <i class='bx bx-x'></i>
                     </div>
                     
-                </div>
-
+            </div>
         </table>
 </div>
 <script>
