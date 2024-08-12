@@ -19,6 +19,8 @@
                     foreach ($results as $row) { 
                     if($row['status'] == 0) {
                         $user_none = "style='background: rgb(199, 199, 199);'";
+                    } else {
+                        $user_none = "";
                     }
                 ?>
                         <tbody>
