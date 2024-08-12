@@ -63,7 +63,14 @@
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $date = date('H:i:s d-m-Y');
                     $picture = $_FILES['image'];
-                    header('location: login.php?register=success');
+                    $register = register($username,$email,$password,$role,$date,$picture);
+                    if($register == 'duplicateEmail') {
+                        header('location: login.php?register=duplicateEmail');
+                    } else if($register == 'duplicateUser') {
+                        header('location: login.php?register=duplicateUser');
+                    } else {
+                        header('location: login.php?register=success');
+                    }
                 }          
                 break;
             case 'login':
@@ -132,6 +139,12 @@
             case 'my-account':
                 $row = show_account($userid);
                 if($row == null) {
+                    $row['fullname'] = "";
+                    $row['city'] = "";
+                    $row['district'] = "";
+                    $row['ward'] = "";
+                    $row['street'] = "";
+                    $row['phonenumber'] = "";
                     $none_address = "none-address";
                     $block_form_address = "";
                 }    

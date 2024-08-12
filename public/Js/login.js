@@ -243,6 +243,7 @@ let validateRegisterInputs = () => {
     loginNow.addEventListener('click', () => {
         formRegister.classList.remove('wrapper');
         formRegister.classList.add('wrapper-turn-off');
+        formRegister.classList.remove('block-wrapper')
 
         formLogin.classList.remove('wrapper-turn-off');
         formLogin.classList.add('wrapper');

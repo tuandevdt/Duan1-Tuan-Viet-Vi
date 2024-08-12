@@ -11,6 +11,7 @@
                             <div class="theorder">
                                 
                                 <?php foreach($result as $row) { ?>
+
                                 <div class="order-contai">
                                 <h1>Thông tin đơn hàng</h1>
                                     <div class="title-your-order">
@@ -31,7 +32,6 @@
                                             <span style="font-weight:550;">Ngày đặt hàng:</span>
                                             <span style="font-style: italic;color: rgb(75, 75, 75); font-size: 14px;"><?php echo $row['orderdate']?></span>
                                         </div>
-                    
                                         <div class="sum-price-order">
                                             <span>Số tiền phải trả: <strong class="color-order"><?php echo number_format($row['totalamount'])?> vnd</strong></span>
                                             <div class="btn-cancel">
@@ -39,6 +39,9 @@
                                                     if($row['orderstatus'] == 'Đã hủy đơn') {
                                                     $none_address = "none-address";
                                                     $block_form_address = "";
+                                                    } else {
+                                                        $none_address = "";
+                                                        $block_form_address = "none-address";
                                                     }
                                                 ?>
                                                 <button class="<?php echo $none_address?>"><a href="index.php?route=cancel-order&id=<?php echo $row['id']?>&status=<?php echo $row['orderstatus']?>">Hủy đơn hàng</a></button>

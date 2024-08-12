@@ -263,7 +263,7 @@
                     <div class="title-list-product">
                         <ul>
                             <?php foreach($resultsCategory as $rowCategory) { ?>
-                            <li class="menu-item active-title-product"><?php echo $rowCategory['categoryname'] ?></li>
+                                <li class="menu-item active-title-product"><?php echo $rowCategory['categoryname'] ?></li>
                             <?php } ?>
                         </ul>                       
                     </div>

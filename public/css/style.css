@@ -54,7 +54,9 @@ body {
     /* text-align: center; */
     overflow: hidden;
 }
-
+.block-wrapper {
+    display: block !important;
+}
 a {
     text-decoration: none;
     color: var(--color-white);
@@ -487,6 +489,7 @@ header {
 
 .wrapper {
     width: 30vw;
+    display: block;
     padding: 10px 10px 20px 10px;
     background: var(--color-rgb-black-high);
     box-shadow: 0px 0px 1px var(--color-white);

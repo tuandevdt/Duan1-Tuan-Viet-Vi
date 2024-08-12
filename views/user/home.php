@@ -102,7 +102,7 @@
 
                 <!-- SẢN PHẨM GIẢM GIÁ -->
                 <div class="title-danhmuc">
-                    <h2>SẢN PHẨM GIẢM GIÁ</h2>
+                    <h2>SẢN PHẨM HOT NHẤT</h2>
                 </div>
                 <div class="slider-models-contai">
                     <div id="models-sale" class="slider-models">  
@@ -118,9 +118,6 @@
                                     </a>
                                     <h5><?php echo number_format($row['price']) ?> vnđ</h5>
                                     <button><a href="">Mua hàng</a></button>
-                                </div>
-                                <div class="sale-off">
-                                    <span>25%</span>
                                 </div>
                             </div>
                         </div>   

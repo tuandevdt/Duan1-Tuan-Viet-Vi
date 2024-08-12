@@ -6,6 +6,8 @@
     $classSendPass = '';
     $noneReturnLogin = 'wrapper-turn-off';
     $register = "";
+    $error_Username = "";
+    $error_Email = "";
 
     if(isset($_GET['login'])) {
         switch($_GET['login']) {
@@ -22,6 +24,17 @@
         switch($_GET['register']) {
             case 'success':
                 $register = "Register Success, Please Login!";
+                break;
+            case 'duplicateEmail':
+                $error_Email = "Email already exists in account!";
+                $nonewrapper = 'wrapper-turn-off';
+                $none_register = 'block-wrapper wrapper';
+                break;
+            case 'duplicateUser':
+                $error_Username = "Username already exists in account!";
+                $nonewrapper = 'wrapper-turn-off';
+                $none_register = 'block-wrapper wrapper';
+                break;
         }
     }
 
@@ -113,21 +126,21 @@
                     </div>
         
                     <!-- REGISTER -->
-                    <div id="register-index" class="wrapper-turn-off">
+                    <div id="register-index" class="wrapper-turn-off <?php echo $none_register?>">
                         <div class="login-btn">
                             <form action="index.php?route=register" id="form-login-register" method="POST" enctype="multipart/form-data">
                                 <h1 class="form-heading">Register</h1>
                             
                                 <div class="form-group">
                                     <input id="username-register" name="user" type="text" class="form-input" placeholder="Username" value="">
-                                    <small class="error"></small>
+                                    <small class="error"><?php echo $error_Username?></small>
                                     <span></span>
                                 </div>
 
             
                                 <div class="form-group">
                                     <input id="email-register" name="email" type="text" class="form-input" placeholder="E-mail" value="">
-                                    <small class="error"></small>
+                                    <small class="error"><?php echo $error_Email?></small>
                                     <span></span>
                                 </div>
             
