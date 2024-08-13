@@ -33,7 +33,10 @@
     //SHOW MY ORDERS
     function my_orders($userid) {
         global $db;
-        $result = $db->select("SELECT * FROM orders WHERE userid = $userid");
+        $result = $db->select("SELECT * 
+                                FROM orders
+                                WHERE userid = $userid
+                                ORDER BY orderdate DESC");
         return $result;
     }
 

@@ -4,7 +4,7 @@
     function show_orders()
     {
         global $db;
-        $result = $db->select("SELECT * FROM orders");
+        $result = $db->select("SELECT * FROM orders ORDER BY orderdate DESC");
         return $result;
     }
 
