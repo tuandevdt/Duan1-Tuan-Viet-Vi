@@ -83,13 +83,18 @@
                         ob_end_flush();
                         exit;
                     } else {
-                        $_SESSION['user'] = $result;
-                        if($result[0]['role'] == 'admin') {
-                            echo "admin";
-                            header('location: ../admin/index.php');
+                        if($result[0]['status'] == 0) {
+                            header('location: login.php?login=block-account');
                         } else {
-                            header('location: index.php?route=index');
+                            $_SESSION['user'] = $result;
+                            if($result[0]['role'] == 'admin') {
+                                echo "admin";
+                                header('location: ../admin/index.php');
+                            } else {
+                                header('location: index.php?route=index');
+                            }
                         }
+                        
                     }
                 }  else {
                     header('location: login.php?login=not_found');

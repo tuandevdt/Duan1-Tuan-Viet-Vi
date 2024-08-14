@@ -18,6 +18,9 @@
                 $show_error ="Login information is incorrect!";
                 $class = 'wrapper';
                 break;
+            case 'block-account':
+                $show_error ="Your account is block!";
+                $class = 'wrapper';
         }
     }
     if(isset($_GET['register'])) {
